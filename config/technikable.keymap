@@ -14,6 +14,12 @@
 #define NUM_L 2
 #define SYM_L 3
 
+#define BASE 0
+#define LOWER 1
+#define RAISE 2
+#define ADJUST 3
+#define FN 4
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
@@ -30,46 +36,67 @@
 	};
     };
 
+   // Activate ADJUST layer by pressing raise and lower
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        adjust_layer {
+            if-layers = <LOWER RAISE>;
+            then-layer = <ADJUST>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
             label = "Base";
             bindings = <
- &kp ESC    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
- &kp TAB    &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp SEMI      &kp QUOT
- &kp LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
-                       &kp LCTRL  &kp LALT    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L      &kp RALT    &kp RCTRL
+ &kp TAB        &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
+ &mt LCTRL ESC  &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp SEMI      &kp QUOT
+ &kp LSHFT      &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
+                       &mo 4    &kp LGUI   &mo LOWER      &kp SPACE      &kp SPACE        &mo RAISE    &kp RGUI   &kp ENTER
             >;
         };
 
-        nav_layer {
-            label = "Nav";
+
+
+        lower_layer {
+            label = "lower";
             bindings = <
-&bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &trans         &trans      &trans     &trans     &kp DEL
-&trans     &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp UARW   &kp RARW   &trans
-&trans     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3       &bt BT_SEL 4    &trans     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END    &trans
-                      &trans     &trans      &trans          &trans       &trans    &trans  &trans         &trans
+&kp TILDE &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT &kp CARET  &kp AMPS       &kp KP_MULTIPLY &kp LPAR        &kp RPAR         &kp DEL
+&kp DEL      &trans    &trans    &trans      &trans    &trans    &trans     &kp UNDERSCORE &kp PLUS        &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE
+&trans    &kp LG(Z) &kp LG(X) &kp LG(C)  &kp LG(V)  &trans     &trans    &trans         &kp LT          &kp GT          &kp QMARK        &kp ENTER
+                              &trans     &trans     &mo LOWER  &trans &trans  &mo RAISE  &trans   &trans
             >;
         };
 
-        num_layer {
-            label = "Num";
+        raise_layer {
             bindings = <
-&trans     &kp LBKT   &kp N7     &kp N8      &kp N9    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &trans
-&trans     &kp MINUS  &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
-&trans     &kp GRAVE  &kp N1     &kp N2      &kp N3    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
-                     &trans     &kp N0      &trans    &none         &none     &kp ESC        &kp DEL      &trans
+&kp GRAVE  &kp N1      &kp N2    &kp N3      &kp N4      &kp N5   &kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &trans
+&kp DEL    &trans      &trans    &trans      &trans      &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT  &kp BSLH
+&trans     &kp K_UNDO  &kp K_CUT &kp K_COPY  &kp K_PASTE &trans   &trans      &trans    &trans    &trans   &trans    &trans
+                                &trans      &trans      &mo LOWER  &trans   &trans  &mo RAISE   &kp LGUI  &trans
             >;
         };
 
-        sym_layer {
-            label = "Sym";
+
+        adjust_layer {
+            label = "adjust";
             bindings = <
-&trans     &kp LBRC   &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp RBRC     &trans     &trans    &trans       &trans       &trans     &trans
-&trans     &kp COLON  &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp PLUS     &trans     &trans    &trans       &trans       &trans     &trans
-&trans     &kp TILDE  &kp LS(N1) &kp LS(N2)  &kp LS(N3)   &kp LS(BSLH) &trans     &trans    &trans       &trans       &trans     &trans
-                      &trans     &kp LS(N0)      &trans          &trans       &trans    &trans  &trans         &trans
+&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5   &kp F6    &kp F7    &kp F8       &kp F9      &kp F10   &kp F11
+&kp DEL   &trans    &trans    &none       &none     &none    &kp LEFT  &kp DOWN  &kp UP       &kp RIGHT   &none     &none
+&none     &none     &none     &none       &none     &none    &kp HOME  &kp PG_DN &kp PG_UP    &kp END     &none     &none
+                              &none       &none     &none    &none   &none    &none     &none     &none
+            >;
+        };
+
+        fn_layer {
+            label = "fn";
+            bindings = <
+&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4   &none            &none         &none         &none            &none          &none
+&none             &none           &none           &none           &none           &none          &kp LG(LBRC)     &kp LG(MINUS) &kp LG(EQUAL) &kp LG(RBRC)     &none          &none
+&none             &kp HASH        &none           &none           &none           &none          &kp LG(LBKT)     &kp LG(RBKT)  &kp LG(GRAVE) &kp LG(LBKT)     &kp LG(RBKT)   &none
+                                              &none           &kp BSPC        &kp ENTER          &none            &none     &none            &none         &none
             >;
         };
 
