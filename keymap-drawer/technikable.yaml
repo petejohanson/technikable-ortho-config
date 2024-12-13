@@ -15,13 +15,13 @@ layers:
   - BSPC
   - ESC
   - A
-  - S
-  - {t: D, h: LALT}
-  - {t: F, h: LGUI}
-  - {t: G, h: LSHFT}
-  - {t: H, h: RSHFT}
-  - {t: J, h: RGUI}
-  - K
+  - {t: S, h: LALT}
+  - {t: D, h: LGUI}
+  - {t: F, h: LSHIFT}
+  - G
+  - H
+  - {t: J, h: RSHFT}
+  - {t: K, h: RGUI}
   - L
   - ;
   - ''''
@@ -59,19 +59,19 @@ layers:
   - \
   - Alt+ BSPC
   - {t: ▽, type: trans}
-  - '`'
-  - <
-  - {t: (, h: LALT}
-  - {t: '{', h: LGUI}
-  - {t: '[', h: LSHFT}
-  - {t: LEFT, h: RSFHT}
-  - {t: DOWN, h: RGUI}
-  - UP
+  - {t: ▽, type: trans}
+  - {t: LALT, h: <}
+  - {t: (, h: LGUI}
+  - {t: '{', h: LSHFT}
+  - '['
+  - LEFT
+  - DOWN
+  - {t: UP, h: RGUI}
   - RIGHT
   - ':'
   - '"'
-  - {t: LSHIFT, h: '~'}
   - '~'
+  - {t: ▽, type: trans}
   - '>'
   - )
   - '}'
@@ -84,7 +84,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - NUM ALT
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -135,51 +135,6 @@ layers:
   - ''
   - {type: held}
   - ''
-  NUM ALT:
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - ''
-  - {type: held}
-  - ''
-  - ''
   BLT:
   - ''
   - ''
@@ -199,10 +154,10 @@ layers:
   - ''
   - ''
   - ''
-  - ''
   - BT PRV
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - BT NXT
-  - ''
   - ''
   - ''
   - ''
