@@ -15,13 +15,13 @@ layers:
   - BSPC
   - ESC
   - A
-  - {t: S, h: LALT}
-  - {t: D, h: LGUI}
-  - {t: F, h: LSHFT}
-  - G
-  - H
-  - {t: J, h: RSHFT}
-  - {t: K, h: RGUI}
+  - S
+  - {t: D, h: LALT}
+  - {t: F, h: LGUI}
+  - {t: G, h: LSHFT}
+  - {t: H, h: RSHFT}
+  - {t: J, h: RGUI}
+  - K
   - L
   - ;
   - ''''
@@ -60,13 +60,13 @@ layers:
   - Alt+ BSPC
   - {t: ▽, type: trans}
   - '`'
-  - {t: <, h: LALT}
-  - {t: (, h: LGUI}
-  - {t: '{', h: LSHFT}
-  - '['
-  - LEFT
-  - {t: DOWN, h: RSHIFT}
-  - {t: UP, h: RGUI}
+  - <
+  - {t: (, h: LALT}
+  - {t: '{', h: LGUI}
+  - {t: '[', h: LSHFT}
+  - {t: LEFT, h: RSFHT}
+  - {t: DOWN, h: RGUI}
+  - UP
   - RIGHT
   - ':'
   - '"'
@@ -230,10 +230,10 @@ combos:
   k: ESC
 - p: [20, 21, 19]
   k: ENTER
-- p: [16, 19]
-  k: '&caps_word'
-  l: [Base]
 - p: [16, 15]
   k: TAB
 - p: [20, 19]
   k: BSPC
+- p: [16, 19]
+  k: '&caps_word'
+  l: [Base]
