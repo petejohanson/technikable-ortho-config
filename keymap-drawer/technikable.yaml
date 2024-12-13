@@ -15,13 +15,13 @@ layers:
   - BSPC
   - ESC
   - A
-  - S
-  - D
+  - {t: S, h: LALT}
+  - {t: D, h: LGUI}
   - {t: F, h: LSHFT}
   - G
   - H
   - {t: J, h: RSHFT}
-  - K
+  - {t: K, h: RGUI}
   - L
   - ;
   - ''''
@@ -39,7 +39,7 @@ layers:
   - ENTER
   - LALT
   - LGUI
-  - SPACE
+  - {t: SPACE, h: LSHFT}
   - LCTRL
   - LEFT
   - {t: DOWN, h: SYM}
@@ -47,44 +47,44 @@ layers:
   - {t: RIGHT, h: BLT}
   SYM:
   - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - '|'
+  - \
+  - Alt+ BSPC
   - {t: ▽, type: trans}
-  - Sft+ 1
-  - Sft+ 2
-  - Sft+ 3
-  - {t: ▽, type: trans}
+  - '`'
+  - {t: <, h: LALT}
+  - {t: (, h: LGUI}
+  - {t: '{', h: LSHFT}
+  - '['
+  - LEFT
+  - {t: DOWN, h: RSHIFT}
+  - {t: UP, h: RGUI}
+  - RIGHT
+  - ':'
+  - '"'
+  - {t: LSHIFT, h: '~'}
+  - '~'
+  - '>'
+  - )
+  - '}'
+  - ']'
   - _
   - '-'
   - '='
   - +
-  - '|'
-  - Alt+ BSPC
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Sft+ 4
-  - Sft+ 5
-  - Sft+ 6
-  - {t: ▽, type: trans}
-  - '{'
-  - '}'
-  - (
-  - )
-  - ':'
-  - '"'
-  - '~'
-  - {t: ▽, type: trans}
-  - Sft+ 7
-  - Sft+ 8
-  - Sft+ 9
-  - {t: ▽, type: trans}
-  - '['
-  - ']'
-  - <
-  - '>'
   - '?'
-  - \
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+ 0
+  - {t: ▽, type: trans}
+  - NUM ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -92,93 +92,138 @@ layers:
   - {t: ▽, type: trans}
   NUM:
   - {t: ▽, type: trans}
+  - ''
+  - '1'
+  - '2'
+  - '3'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - '4'
+  - '5'
+  - '6'
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - '7'
+  - '8'
+  - '9'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ',', h: LALT}
+  - {t: ., h: LGUI}
+  - '0'
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  NUM ALT:
   - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - '4'
   - '5'
   - '6'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ','
-  - .
   - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
+  - ''
+  - {type: held}
+  - ''
+  - ''
   BLT:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - BT CLR
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - {t: BT, h: '4'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
   - BT PRV
   - BT NXT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: BT, h: '0'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
   - {type: held}
 combos:
 - p: [14, 15, 16]
@@ -188,3 +233,7 @@ combos:
 - p: [16, 19]
   k: '&caps_word'
   l: [Base]
+- p: [16, 15]
+  k: TAB
+- p: [20, 19]
+  k: BSPC
