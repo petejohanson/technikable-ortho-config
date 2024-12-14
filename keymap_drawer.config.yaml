@@ -29,9 +29,9 @@ draw_config:
     rx: 4.0
     ry: 4.0
   svg_extra_style: |-
-    rect.key:only-child:not(.held) { opacity: 0.25 }
-    rect.trans { opacity: 0.25 }
-    .held rect { fill: pink; opacity: 1 }
+    rect.key:only-child:not(.held) { opacity: 0.5 }
+    rect.trans { opacity: 0.5 }
+    .held rect { opacity: 1; fill: pink }
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
   shrink_wide_legends: 7
   style_layer_activators: true
