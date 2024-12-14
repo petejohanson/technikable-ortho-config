@@ -116,9 +116,9 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 
-rect.key:only-child:not(.held) { opacity: 0.25 }
-rect.trans { opacity: 0.25 }
-.held rect { fill: pink; opacity: 1 }</style>
+rect.key:only-child:not(.held) { opacity: 0.5 }
+rect.trans { opacity: 0.5 }
+.held rect { opacity: 1; fill: pink }</style>
 <g transform="translate(30, 0)" class="layer-Base">
 <text x="0" y="28" class="label" id="Base">Base:</text>
 <g transform="translate(0, 56)">
